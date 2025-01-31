@@ -1,0 +1,51 @@
+/* Estilos para o botão de abrir o modal */
+.open-modal-button {
+    /* Seus estilos aqui */
+    background-color: #007bff; /* Exemplo */
+    color: white; /* Exemplo */
+    padding: 10px 20px; /* Exemplo */
+    border: none; /* Exemplo */
+    cursor: pointer; /* Exemplo */
+  }
+  
+  /* Estilos para o overlay do modal */
+  .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que o modal fique na frente de outros elementos */
+  }
+  
+  /* Estilos para o conteúdo do modal */
+  .modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px; /* Largura máxima do modal */
+    outline: none; /* Remove a borda padrão do modal */
+    overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for maior que a altura */
+  }
+  
+  .modal-inner {
+    /* Estilos para o conteúdo interno do modal, se necessário */
+  }
+  
+  
+  /* Estilos para o botão de fechar o modal (opcional) */
+  .modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* ... outros estilos do seu componente ... */
