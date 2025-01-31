@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ice: #ffe89c;
+  --color-sonic: #9d6bc9;
+  --color-sonic-dark: #8357ae;
+}
