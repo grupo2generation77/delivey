@@ -9,21 +9,10 @@ import './Cadastro.css';
 Modal.setAppElement('#root'); // Define o elemento raiz para o Modal
 
 function Cadastro() {
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [, setIsOpen] = useState(false);
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className="open-modal-button">
-        Cadastre-se
-      </button>
-
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={() => setIsOpen(false)}
-        contentLabel="Cadastro"
-        className="modal-content" // Adicione classes para estilização
-        overlayClassName="modal-overlay" // Classe para o overlay
-      >
         <div className="modal-inner"> {/* Conteúdo interno do modal */}
           <h2 className="text-slate-900 text-5xl">Cadastrar</h2>
           <form className="flex justify-center items-center flex-col w-full gap-3">
@@ -57,7 +46,7 @@ function Cadastro() {
             Fechar
           </button>
         </div>
-      </Modal>
+  
     </>
   );
 }

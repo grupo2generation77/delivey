@@ -32,11 +32,6 @@
     overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for maior que a altura */
   }
   
-  .modal-inner {
-    /* Estilos para o conteúdo interno do modal, se necessário */
-  }
-  
-  
   /* Estilos para o botão de fechar o modal (opcional) */
   .modal-close-button {
     position: absolute;
