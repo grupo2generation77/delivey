@@ -1,21 +1,28 @@
-import { Link } from "react-router-dom";
 import { MdOutlineDeliveryDining } from "react-icons/md";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 function Login() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen((prev) => !prev); // Garante que a atualização seja baseada no estado anterior
+  };
+
+  console.log("Popup aberto?", isPopupOpen); // Verifica mudanças no estado
+
   return (
     <>
       <div
         className="bg-ice grid grid-cols-1 lg:grid-cols-2 
-                    h-screen place-items-center font-bold "
+                    h-screen place-items-center font-bold"
       >
-        <div className=" hidden lg:block">
+        <div className="hidden lg:block">
           <motion.div
             initial={{ x: "-100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            {" "}
             <img
               src="https://ik.imagekit.io/lkxant9gz/rb_2149442162.png?updatedAt=1738340839229"
               alt="delivery-guy"
@@ -65,14 +72,40 @@ function Login() {
             <hr className="border-slate-800 w-full" />
 
             <p>
-              {" "}
-              <Link to="/cadastro" className="text-sonic-dark hover:underline">
+              <button
+                onClick={(e) => {
+                  e.preventDefault(); // Evita que o botão cause re-render desnecessário
+                  togglePopup();
+                }}
+                className="text-sonic-dark hover:underline"
+              >
                 Cadastre-se
-              </Link>
+              </button>
             </p>
           </form>
         </motion.div>
       </div>
+
+      {isPopupOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-white/20 backdrop-blur-xs p-5 rounded-lg">
+          <div className="bg-gray-200 p-6 text-center rounded-lg shadow-lg relative">
+            <h2 className="text-2xl font-bold text-silver-ice mb-4">Contato</h2>
+            <p className="text-silver-ice">Entre em contato pelo e-mail:</p>
+            <a
+              href="mailto:contato@rh77.com"
+              className="text-sonic-ice underline"
+            >
+              contato@rh77.com
+            </a>
+            <button
+              onClick={togglePopup}
+              className="mt-4 px-4 py-2 bg-shadow-ice text-white rounded-lg hover:bg-dark-ice transition"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
