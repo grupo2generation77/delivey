@@ -63,14 +63,14 @@ const Catalogo: React.FC = () => {
             {[1,2,3,4,5,6,7,8,9,10].map((item) => (
                 <div
                 key={item}
-                className={'bg-white drop-shadow-lg h-fill md:w-70  lg:w-full '+
+                className={'bg-white drop-shadow-lg h-full md:w-70  lg:w-full '+
                     (item%2==0? ' rounded-tl-4xl rounded-bl-4xl' : 'rounded-tr-4xl rounded-br-4xl ')+
                     ' flex flex-col items-center hover:scale-105 transition-transform animate-fade-right animate-duration-2000 ' +delays[item]}
                 >
                 <img
                   src={`https://i.imgur.com/UoEzRUQ.png`} // Substituir por imagem real
                     alt="Comida"
-                    className="h-fit w-fit object-cover rounded-md"
+                    className="h-100 w-100 object-cover rounded-md"
                 />
                 <h2 className="text-lg font-bold mt-2">Comida {item}</h2>
                 <p className="text-gray-600">Descrição da comida {item}</p>
@@ -84,7 +84,7 @@ const Catalogo: React.FC = () => {
                 {[1,2,3,4,5,6,8].map((item) => (
                     <div
                     key={item}
-                    className={`bg-white drop-shadow-lg ${item%2==0? ' rounded-tl-4xl rounded-bl-4xl' : 'rounded-tr-4xl rounded-br-4xl '} flex flex-col items-center hover:scale-105 transition-transform animate-fade-left animate-duration-2000 animate-ease-in-out ${delays[item]}`}
+                    className={`bg-white drop-shadow-lg h-full md:w-70  lg:w-full ${item%2==0? ' rounded-tl-4xl rounded-bl-4xl' : 'rounded-tr-4xl rounded-br-4xl '} flex flex-col items-center hover:scale-105 transition-transform animate-fade-left animate-duration-2000 animate-ease-in-out ${delays[item]}`}
                     >
                     <img
                     src={`https://uploads.spiritfanfiction.com/historias/capitulos/202106/kazuma-x-megumim-22580901-300620210759.gif`} // Substituir por imagem real
