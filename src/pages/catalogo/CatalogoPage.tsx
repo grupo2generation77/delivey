@@ -84,7 +84,7 @@ const Catalogo: React.FC = () => {
                 {[1,2,3,4,5,6,8].map((item) => (
                     <div
                     key={item}
-                    className={`bg-white drop-shadow-lg h-full md:w-70  lg:w-full ${item%2==0? ' rounded-tl-4xl rounded-bl-4xl' : 'rounded-tr-4xl rounded-br-4xl '} flex flex-col items-center hover:scale-105 transition-transform animate-fade-left animate-duration-2000 animate-ease-in-out ${delays[item]}`}
+                    className={`bg-white drop-shadow-lg h-full md:w-70  lg:w-full ${item%2==0? ' rounded-tl-4xl rounded-bl-4xl' : 'rounded-tr-4xl rounded-br-4xl '} flex flex-col items-center hover:scale-105 transition-transform animate-fade-left animate-duration-2000 animate-ease-in-out ${delays[5-item]}`}
                     >
                     <img
                     src={`https://uploads.spiritfanfiction.com/historias/capitulos/202106/kazuma-x-megumim-22580901-300620210759.gif`} // Substituir por imagem real
