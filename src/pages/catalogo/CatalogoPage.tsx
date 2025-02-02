@@ -3,6 +3,7 @@ import type React from "react";
 import { useState, useEffect, useRef } from "react";
 import { ListarProdutos } from "../../components/produto/listarProdutos/ListarProdutos";
 import { ListarCategorias } from "../../components/categoria/listarCategorias/ListarCategorias";
+import BotaoAnimado from "../../components/botoes/BotaoAnimado";
 
 const delays:string[] = [
     ' animate-delay-400 ',
@@ -76,6 +77,9 @@ const Catalogo: React.FC = () => {
             <div className="flex justify-center items-center flex-col p-0 animate-fade animate-duration-1000 animate-delay-500 animate-ease-in">
                 <BotaoProdutoCategoria onClick={() => {setMostrarCategorias(!mostrarCategorias);scrollToTop()}} />
             </div>
+
+            <BotaoAnimado/>
+
 
         {/* Cards */}
             {!mostrarCategorias &&(
