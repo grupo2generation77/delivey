@@ -1,4 +1,4 @@
-import { MdOutlineDeliveryDining } from "react-icons/md";
+import { SiCoffeescript } from "react-icons/si";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -14,7 +14,7 @@ function Login() {
   return (
     <>
       <div
-        className="bg-ice grid grid-cols-1 lg:grid-cols-2 
+        className="bg-cafe grid grid-cols-1 lg:grid-cols-2 
                     h-screen place-items-center font-bold"
       >
         <div className="hidden lg:block">
@@ -24,7 +24,7 @@ function Login() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <img
-              src="https://ik.imagekit.io/lkxant9gz/rb_2149442162.png?updatedAt=1738340839229"
+              src="https://ik.imagekit.io/lkxant9gz/baixados.png?updatedAt=1738585876127"
               alt="delivery-guy"
             />
           </motion.div>
@@ -36,7 +36,7 @@ function Login() {
         >
           <form className="flex justify-center items-center flex-col gap-4">
             <h2 className="text-slate-900 text-2xl">
-              <MdOutlineDeliveryDining size={250} />
+              <SiCoffeescript size={150} />
             </h2>
             <div className="flex text-center text-2xl flex-col w-full">
               <label className="p-5" htmlFor="usuario">
@@ -64,7 +64,7 @@ function Login() {
             </div>
             <button
               type="submit"
-              className="rounded bg-sonic flex justify-center hover:bg-sonic-dark text-white w-1/2 py-2"
+              className="rounded bg-orange-400 flex justify-center hover:bg-orange-600 text-white w-1/2 py-2"
             >
               <span>Entrar</span>
             </button>
