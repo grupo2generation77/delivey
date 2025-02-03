@@ -1,113 +1,122 @@
-import { useEffect, useState } from 'react';
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+// Configurações do slider
+const sliderSettings = {
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: false,
+  nextArrow: <div style={{ color: "#90EE90", fontSize: "24px" }}>▶</div>,
+  prevArrow: <div style={{ color: "#90EE90", fontSize: "24px" }}>◀</div>,
+};
+
+const cards = [
+  {
+    // Card 1: Sobre a empresa Biscoitadores
+    title: "Biscoitadores",
+    description: "Empresa de desenvolvimento de softwares. Todos os membros são do estado do Rio de Janeiro.",
+    image: "https://via.placeholder.com/150/111", // altere para a URL da imagem desejada
+    link: "https://linkedin.com/company/biscoitadores", // altere para o link desejado
+  },
+  {
+    // Card 2: Sobre a demo de delivery de café Delivey 77
+    title: "Delivey 77",
+    description: "Demo de site de delivery de café.",
+    image: "https://via.placeholder.com/150/222",
+    link: "https://linkedin.com/company/delivey77",
+  },
+  {
+    // Card 3: Membro 1
+    title: "Membro 1",
+    description: "Descrição do membro 1.",
+    image: "https://via.placeholder.com/150/333",
+    link: "https://linkedin.com/in/membro1",
+  },
+  {
+    // Card 4: Membro 2
+    title: "Membro 2",
+    description: "Descrição do membro 2.",
+    image: "https://via.placeholder.com/150/444",
+    link: "https://linkedin.com/in/membro2",
+  },
+  {
+    // Card 5: Membro 3
+    title: "Membro 3",
+    description: "Descrição do membro 3.",
+    image: "https://via.placeholder.com/150/555",
+    link: "https://linkedin.com/in/membro3",
+  },
+  {
+    // Card 6: Membro 4
+    title: "Membro 4",
+    description: "Descrição do membro 4.",
+    image: "https://via.placeholder.com/150/666",
+    link: "https://linkedin.com/in/membro4",
+  },
+  {
+    // Card 7: Membro 5
+    title: "Membro 5",
+    description: "Descrição do membro 5.",
+    image: "https://via.placeholder.com/150/777",
+    link: "https://linkedin.com/in/membro5",
+  },
+  {
+    // Card 8: Membro 6
+    title: "Membro 6",
+    description: "Descrição do membro 6.",
+    image: "https://via.placeholder.com/150/888",
+    link: "https://linkedin.com/in/membro6",
+  },
+];
 
 const Sobre = () => {
-  // Defina explicitamente o tipo do estado como um array de números
-  const [visibleCards, setVisibleCards] = useState<number[]>([]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const cards = document.querySelectorAll('.card');
-      cards.forEach((card, index) => {
-        const cardTop = card.getBoundingClientRect().top;
-        if (cardTop < window.innerHeight * 0.75 && !visibleCards.includes(index)) {
-          setVisibleCards((prev) => [...prev, index]);
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [visibleCards]);
-
-  const teamMembers = [
-    {
-      name: "Biscoitadores",
-      role: "Empresa de Desenvolvimento de Softwares",
-      description: "Somos uma empresa de desenvolvimento de softwares chamada Biscoitadores. Todos os membros são do estado do Rio de Janeiro.",
-      image: "https://via.placeholder.com/150",
-      link: "#",
-    },
-    {
-      name: "Delivery 77",
-      role: "Demo de Site de Delivery de Café",
-      description: "Conheça nossa demo de site de delivery de café, a Delivery 77.",
-      image: "https://via.placeholder.com/150",
-      link: "#",
-    },
-    {
-      name: "Membro 1",
-      role: "Desenvolvedor",
-      description: "Descrição do Membro 1.",
-      image: "https://via.placeholder.com/150",
-      link: "#",
-    },
-    {
-      name: "Membro 2",
-      role: "Designer",
-      description: "Descrição do Membro 2.",
-      image: "https://via.placeholder.com/150",
-      link: "#",
-    },
-    {
-      name: "Membro 3",
-      role: "Gerente de Projetos",
-      description: "Descrição do Membro 3.",
-      image: "https://via.placeholder.com/150",
-      link: "#",
-    },
-    {
-      name: "Membro 4",
-      role: "Desenvolvedor",
-      description: "Descrição do Membro 4.",
-      image: "https://via.placeholder.com/150",
-      link: "#",
-    },
-    {
-      name: "Membro 5",
-      role: "Desenvolvedor",
-      description: "Descrição do Membro 5.",
-      image: "https://via.placeholder.com/150",
-      link: "#",
-    },
-    {
-      name: "Membro 6",
-      role: "Desenvolvedor",
-      description: "Descrição do Membro 6.",
-      image: "https://via.placeholder.com/150",
-      link: "#",
-    },
-  ];
-
   return (
-    <div className="min-h-screen">
-      {/* Seção com efeito parallax */}
+    <div className="flex flex-col">
+      {/* Seção Parallax: imagem de fundo cobrindo toda a tela */}
       <div
-        className="h-screen bg-cover bg-center"
-        style={{ backgroundImage: "url('https://via.placeholder.com/1920x1080')" }}
-      ></div>
+        className="h-screen bg-fixed bg-center bg-cover"
+        style={{
+          backgroundImage: "url('https://via.placeholder.com/1920x1080')", // altere para sua imagem de fundo
+        }}
+      >
+        {/* Você pode incluir um título ou deixar vazio para exibir só a imagem */}
+        <div className="h-full flex items-center justify-center bg-black bg-opacity-40">
+          <h1 className="text-5xl text-white font-bold">Sobre Nós</h1>
+        </div>
+      </div>
 
-      {/* Seção dos cards */}
-      <div className="container mx-auto px-4 py-8">
-        {teamMembers.map((member, index) => (
-          <a
-            key={index}
-            href={member.link}
-            className={`card mb-8 p-6 bg-white shadow-lg rounded-lg flex flex-col md:flex-row items-center transition-opacity duration-1000 ${
-              visibleCards.includes(index) ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-24 h-24 md:w-32 md:h-32 rounded-full mb-4 md:mb-0 md:mr-8"
-            />
-            <div className="text-center md:text-left">
-              <h2 className="text-xl font-bold">{member.name}</h2>
-              <p className="text-gray-600">{member.role}</p>
-              <p className="text-gray-800">{member.description}</p>
-            </div>
-          </a>
-        ))}
+      {/* Seção do Carrossel de Cards */}
+      <div className="bg-white py-10">
+        <div className="container mx-auto px-4">
+          <Slider {...sliderSettings}>
+            {cards.map((card, index) => (
+              <a
+                key={index}
+                href={card.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block focus:outline-none"
+              >
+                <div className="flex flex-col md:flex-row items-center bg-gray-100 bg-opacity-90 rounded-lg shadow-lg p-6 m-4 hover:shadow-xl transition duration-300">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full md:mr-6"
+                  />
+                  <div className="mt-4 md:mt-0 text-center md:text-left">
+                    <h3 className="text-xl font-bold mb-2">{card.title}</h3>
+                    <p className="text-gray-700">{card.description}</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </Slider>
+        </div>
       </div>
     </div>
   );
