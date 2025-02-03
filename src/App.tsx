@@ -3,7 +3,7 @@ import "./App.css";
 import Home from './pages/home/Home'
 import Sobre from './pages/sobre/Sobre'
 import Navbar from './components/navbar/Navbar'
-//import Footer from './components/footer/Footer'
+import Footer from './components/footer/Footer'
 
 function App() {
 
@@ -15,6 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/sobre" element={<Sobre />} />
           </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   )
