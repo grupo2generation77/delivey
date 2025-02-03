@@ -87,16 +87,65 @@ function Login() {
       </div>
 
       {isPopupOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-white/20 backdrop-blur-xs p-5 rounded-lg">
-          <div className="bg-gray-200 p-6 text-center rounded-lg shadow-lg relative">
-            <h2 className="text-2xl font-bold text-silver-ice mb-4">Contato</h2>
-            <p className="text-silver-ice">Entre em contato pelo e-mail:</p>
-            <a
-              href="mailto:contato@rh77.com"
-              className="text-sonic-ice underline"
-            >
-              contato@rh77.com
-            </a>
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-bold mb-4">Cadastre-se</h2>
+            <form className="flex flex-col gap-4">
+              <div className="flex flex-col">
+                <label htmlFor="nome" className="text-lg">
+                  Nome
+                </label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Nome"
+                  className="border-2 text-xl border-slate-700 rounded p-2"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="email" className="text-lg">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  className="border-2 text-xl border-slate-700 rounded p-2"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="senha" className="text-lg">
+                  Senha
+                </label>
+                <input
+                  type="password"
+                  id="senha"
+                  name="senha"
+                  placeholder="Senha"
+                  className="border-2 text-xl border-slate-700 rounded p-2"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="confirmarSenha" className="text-lg">
+                  Confirmar Senha
+                </label>
+                <input
+                  type="password"
+                  id="confirmarSenha"
+                  name="confirmarSenha"
+                  placeholder="Confirmar Senha"
+                  className="border-2 text-xl border-slate-700 rounded p-2"
+                />
+              </div>
+              <button
+                type="submit"
+                className="rounded bg-sonic flex justify-center hover:bg-sonic-dark text-white w-full py-2"
+              >
+                <span>Cadastrar</span>
+              </button>
+            </form>
             <button
               onClick={togglePopup}
               className="mt-4 px-4 py-2 bg-shadow-ice text-white rounded-lg hover:bg-dark-ice transition"
