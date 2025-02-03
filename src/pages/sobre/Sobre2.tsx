@@ -7,16 +7,16 @@ const cards = [
     // Card 1: Empresa Biscoitadores
     title: "Biscoitadores",
     description:
-      "Empresa de desenvolvimento de softwares. Todos os membros são do estado do Rio de Janeiro.",
-    image: "https://via.placeholder.com/150/111", // Altere para a URL desejada
-    link: "https://linkedin.com/company/biscoitadores", // Altere para o link desejado
+      "Empresa de desenvolvimento de softwares funndada no Rio de Janeiro em dezembro de 2024. O nome foi baseado em uma brincadeira com os colegas de São Paulo, pois todos os membros são do estado do Rio de Janeiro e não falam Bolacha.",
+    image: "https://ik.imagekit.io/lkxant9gz/rb_82808.png?updatedAt=1738613905001", // Altere para a URL desejada
+    link: "https://github.com/grupo2generation7", // Altere para o link desejado
   },
   {
     // Card 2: Demo de delivery de café Delivey 77
     title: "Delivey 77",
-    description: "Demo de site de delivery de café.",
-    image: "https://via.placeholder.com/150/222",
-    link: "https://linkedin.com/company/delivey77",
+    description: "Um projeto demonstrativo, com a temática de site de delivery de produtos relacionados a café.",
+    image: "https://ik.imagekit.io/devivanjulio/_Pngtree_flying%20cup%20of%20coffee%20with_5057949.png?updatedAt=1738624964597",
+    link: "https://github.com/grupo2generation77/delivey",
   },
   {
     // Card 3: Membro 1
@@ -88,58 +88,62 @@ const Sobre = () => {
       <div className="relative z-10">
         {/* Seção de título */}
         <div className="h-screen flex items-center justify-center">
-          <h1 className="text-5xl text-white font-bold">Sobre Nós</h1>
+          <h1 className="text-5xl text-red-800 font-bold relative overflow-hidden group shadow-[2px_2px_0px_rgba(155,44,44,1)] bg-pink-50">
+            <span className="absolute inset-0 bg-red-800 transform translate-y-full group-hover:translate-y-0 transition-all duration-300"></span>
+            <span className="relative z-10 text-red-800 group-hover:text-white transition-colors duration-300 px-8 py-8">
+              Sobre Nós
+            </span>
+          </h1>
         </div>
-
-        {/* Container dos cards com efeito parallax */}
-        <motion.div style={{ y: parallaxY }} className="py-10">
-          <div className="container mx-auto px-4 space-y-16">
-            {cards.map((card, index) => (
-              <motion.a
-                key={index}
-                href={card.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-                initial={{ scale: 0.7, filter: "blur(4px)", opacity: 0.6 }}
-                whileInView={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: false, amount: 0.8 }}
-              >
-                <div className="bg-white bg-opacity-90 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
-                  <div className="flex flex-col md:flex-row items-center p-4">
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full md:mr-6"
-                    />
-                    <div className="mt-4 md:mt-0 text-center md:text-left">
-                      <h2 className="text-xl font-bold">{card.title}</h2>
-                      <p className="text-gray-700">{card.description}</p>
-                    </div>
+      </div>
+      {/* Container dos cards com efeito parallax */}
+      <motion.div style={{ y: parallaxY }} className="py-10">
+        <div className="container mx-auto px-4 space-y-16">
+          {cards.map((card, index) => (
+            <motion.a
+              key={index}
+              href={card.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+              initial={{ scale: 0.7, filter: "blur(4px)", opacity: 0.6 }}
+              whileInView={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: false, amount: 0.8 }}
+            >
+              <div className="bg-white bg-opacity-90 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                <div className="flex flex-col md:flex-row items-center p-4">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full md:mr-6"
+                  />
+                  <div className="mt-4 md:mt-0 text-center md:text-left">
+                    <h2 className="text-xl font-bold">{card.title}</h2>
+                    <p className="text-gray-700">{card.description}</p>
                   </div>
                 </div>
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+      </motion.div>
 
-        {/* Seção do Cookie */}
-        <motion.div
-          ref={cookieRef}
-          className="min-h-screen flex items-center justify-center bg-white/20 backdrop-blur-xs"
-        >
-          <motion.img
-            src="https://ik.imagekit.io/lkxant9gz/rb_82808.png?updatedAt=1738613905001" // Substitua pela imagem de um cookie americano
-            alt="Cookie"
-            className="w-48 h-48 object-contain origin-center"
-            style={{
-              filter: inViewCookie ? "blur(0px)" : "blur(4px)",
-              transition: "filter 0.5s",
-            }}
-          />
-        </motion.div>
-      </div>
+      {/* Seção do Cookie */}
+      <motion.div
+        ref={cookieRef}
+        className="min-h-screen flex items-center justify-center bg-white/20 backdrop-blur-xs"
+      >
+        <motion.img
+          src="https://ik.imagekit.io/lkxant9gz/rb_82808.png?updatedAt=1738613905001" // Substitua pela imagem de um cookie americano
+          alt="Cookie"
+          className="w-48 h-48 object-contain origin-center"
+          style={{
+            filter: inViewCookie ? "blur(0px)" : "blur(4px)",
+            transition: "filter 0.5s",
+          }}
+        />
+      </motion.div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ const cards = [
     // Card 1: Empresa Biscoitadores
     title: "Biscoitadores",
     description:
-      "Empresa de desenvolvimento de softwares funndada no Rio de Janeiro em dezembro de 2024. O nome foi baseado em uma brincadeira com os colegas de São Paulo, pois todos os membros são do estado do Rio de Janeiro e não falam Bolacha.",
+      "Empresa de desenvolvimento de softwares fundada no Rio de Janeiro em dezembro de 2024. O nome foi baseado em uma brincadeira com os colegas de São Paulo, pois todos os membros são do estado do Rio de Janeiro e não falam Bolacha.",
     image: "https://ik.imagekit.io/lkxant9gz/rb_82808.png?updatedAt=1738613905001", // Altere para a URL desejada
     link: "https://github.com/grupo2generation7", // Altere para o link desejado
   },
@@ -21,7 +21,7 @@ const cards = [
   {
     // Card 3: Membro 1
     title: "Matheus Queiroz",
-    description: "Sênior e Tetch Lead.",
+    description: "Sênior e Tech Lead.",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQGNuaxckRDF7Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730742826051?e=1744243200&v=beta&t=VSB3tNn7pDR8PmpHa-tj2vBCmx7Yba4DvPQHWfYJJIE",
     link: "https://www.linkedin.com/in/matheus-queiroz/",
   },
@@ -96,6 +96,7 @@ const Sobre = () => {
           </h1>
         </div>
       </div>
+
       {/* Container dos cards com efeito parallax */}
       <motion.div style={{ y: parallaxY }} className="py-10">
         <div className="container mx-auto px-4 space-y-16">
@@ -137,7 +138,7 @@ const Sobre = () => {
         <motion.img
           src="https://ik.imagekit.io/lkxant9gz/rb_82808.png?updatedAt=1738613905001" // Substitua pela imagem de um cookie americano
           alt="Cookie"
-          className="w-48 h-48 object-contain origin-center"
+          className="w-48 h-48 object-contain origin-center animate-spin-slow" // Adicione a classe animate-spin-slow
           style={{
             filter: inViewCookie ? "blur(0px)" : "blur(4px)",
             transition: "filter 0.5s",
