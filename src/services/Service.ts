@@ -30,14 +30,4 @@ export const atualizar = async (url: string, dados: Object, setDados: Function, 
 }
 
 
-const usuario = {	
-	usuario:"root@root.com",
-	senha:"rootroot"
-}
-
-export const teste = async():Promise<any> =>{
-    const response = await api.post(`/usuarios/logar`,usuario);
-    return response.data
-}
-
   

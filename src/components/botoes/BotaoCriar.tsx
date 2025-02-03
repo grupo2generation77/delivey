@@ -20,7 +20,7 @@ const StyledWrapper = styled.div`
     border: none;
     font-size: 1rem;
     background-color: inherit;
-    border-radius: 100px;
+    border-radius: 0;
     font-weight: 600;
     color:  #7e2a0c;
     box-shadow: 0 0 0 2px  #7e2a0c;
@@ -36,7 +36,7 @@ const StyledWrapper = styled.div`
     transform: translate(-50%, -50%);
     width: 20px;
     height: 20px;
-    background-color: #9f0712;
+    background-color: #7e2a0c;
     border-radius: 50%;
     opacity: 0;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);

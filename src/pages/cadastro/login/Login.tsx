@@ -1,37 +1,9 @@
-import { motion } from "framer-motion"; // Importe AnimatePresence
-import { ChangeEvent, useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
-import UsuarioLogin from "../../models/Usuario/UsuarioLogin";
-import { useNavigate } from "react-router-dom";
-import { SiCoffeescript } from "react-icons/si";
-import { Cadastro } from "./Cadastrar";
+import { MdOutlineDeliveryDining } from "react-icons/md";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 function Login() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const { usuario, handleLogin } = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
-    {} as UsuarioLogin
-  );
-
-  useEffect(() => {
-    if (usuario.token !== "") {
-      navigate("/");
-    }
-  }, [usuario]);
-
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-    setUsuarioLogin({
-      ...usuarioLogin,
-      [e.target.name]: e.target.value,
-    });
-  }
-
-  function login(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
-    handleLogin(usuarioLogin);
-  }
 
   const togglePopup = () => {
     setIsPopupOpen((prev) => !prev); // Garante que a atualização seja baseada no estado anterior
@@ -42,7 +14,7 @@ function Login() {
   return (
     <>
       <div
-        className="bg-cafe grid grid-cols-1 lg:grid-cols-2 
+        className="bg-ice grid grid-cols-1 lg:grid-cols-2 
                     h-screen place-items-center font-bold"
       >
         <div className="hidden lg:block">
@@ -52,7 +24,7 @@ function Login() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <img
-              src="https://ik.imagekit.io/lkxant9gz/baixados.png?updatedAt=1738585876127"
+              src="https://ik.imagekit.io/lkxant9gz/rb_2149442162.png?updatedAt=1738340839229"
               alt="delivery-guy"
             />
           </motion.div>
@@ -62,12 +34,9 @@ function Login() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeIn" }}
         >
-          <form
-            className="flex justify-center items-center flex-col gap-4"
-            onSubmit={login}
-          >
+          <form className="flex justify-center items-center flex-col gap-4">
             <h2 className="text-slate-900 text-2xl">
-              <SiCoffeescript size={150} />
+              <MdOutlineDeliveryDining size={250} />
             </h2>
             <div className="flex text-center text-2xl flex-col w-full">
               <label className="p-5" htmlFor="usuario">
@@ -79,10 +48,6 @@ function Login() {
                 name="usuario"
                 placeholder="Usuario"
                 className="border-2 text-xl border-slate-700 rounded p-2"
-                value={usuarioLogin.usuario}
-                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  atualizarEstado(e)
-                }
               />
             </div>
             <div className="flex text-2xl flex-col text-center w-full">
@@ -95,15 +60,11 @@ function Login() {
                 name="senha"
                 placeholder="Senha"
                 className="border-2 text-xl border-slate-700 rounded p-2"
-                value={usuarioLogin.senha}
-                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  atualizarEstado(e)
-                }
               />
             </div>
             <button
               type="submit"
-              className="rounded bg-orange-400 flex justify-center hover:bg-orange-600 text-white w-1/2 py-2"
+              className="rounded bg-sonic flex justify-center hover:bg-sonic-dark text-white w-1/2 py-2"
             >
               <span>Entrar</span>
             </button>
@@ -125,7 +86,26 @@ function Login() {
         </motion.div>
       </div>
 
-      {isPopupOpen && <Cadastro setIsPopupOpen={setIsPopupOpen} />}
+      {isPopupOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-white/20 backdrop-blur-xs p-5 rounded-lg">
+          <div className="bg-gray-200 p-6 text-center rounded-lg shadow-lg relative">
+            <h2 className="text-2xl font-bold text-silver-ice mb-4">Contato</h2>
+            <p className="text-silver-ice">Entre em contato pelo e-mail:</p>
+            <a
+              href="mailto:contato@rh77.com"
+              className="text-sonic-ice underline"
+            >
+              contato@rh77.com
+            </a>
+            <button
+              onClick={togglePopup}
+              className="mt-4 px-4 py-2 bg-shadow-ice text-white rounded-lg hover:bg-dark-ice transition"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }

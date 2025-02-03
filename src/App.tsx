@@ -3,21 +3,27 @@ import "./App.css";
 import Login from "./pages/login/Login";
 import CatalogoPage from "./pages/catalogo/CatalogoPage";
 import { CatalogoHome } from "./components/catalogoHome/CatalogoHome";
-import { teste } from "./services/Service";
-import Navbar from './components/navbar/Navbar';
+import Navbar from "./components/navbar/Navbar";
+import { AuthProvider } from "./contexts/AuthContext";
+import { Home } from "./pages/home/Home";
+import { ToastContainer } from "react-toastify";
 
 function App() {
-  console.log(teste())
   return (
     <>
-    <BrowserRouter>
-    <Navbar/>
-    <Routes>
-      <Route path="/" element={<CatalogoPage />} />
-    </Routes>
-    </BrowserRouter>
+      <AuthProvider>
+        <ToastContainer />
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/catalogo" element={<CatalogoPage />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </>
-  )
+  );
 }
 
 export default App;
