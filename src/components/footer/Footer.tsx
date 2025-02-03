@@ -1,8 +1,8 @@
-import { FacebookLogo, InstagramLogo, LinkedinLogo,GithubLogo } from "@phosphor-icons/react";
+import { FacebookLogo, InstagramLogo, LinkedinLogo, GithubLogo } from "@phosphor-icons/react"
 
 function Footer() {
   let data = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-[#fee5ca] py-8">
       <div className="container mx-auto px-4 flex flex-wrap justify-between">
@@ -34,7 +34,7 @@ function Footer() {
             </a>
 
             <a href="https://www.linkedin.com/in/vitoria-manuela/">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFLw_w4gY3BXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724398107767?e=1743638400&v=beta&t=QIed63iRmZxdOK0Dq-KZiN7ESOIK9QQg8uQ9FN14Qnc" alt="LinkedIn" className="w-8 h-8 rounded-2xl" />
+              <img src="https://media.licdn.com/dms/image/v2/D4D03AQFLw_w4gY3BXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724398107767?e=1743638400&v=beta&t=QIed63iRmZxdOK0Dq-KZiN7ESOIK9QQg8uQ9FN14Qnc" alt="LinkedIn" className="w-8 h-8 rounded-2xl" />
             </a>
           </div>
           <div className="flex space-x-4">
