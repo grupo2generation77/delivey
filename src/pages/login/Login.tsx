@@ -1,6 +1,8 @@
 import { MdOutlineDeliveryDining } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion"; // Importe AnimatePresence
 import { useState } from "react";
+import { SiCoffeescript } from "react-icons/si";
+
 
 function Login() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -26,7 +28,7 @@ function Login() {
   return (
     <>
       <div
-        className="bg-ice grid grid-cols-1 lg:grid-cols-2 
+        className="bg-cafe grid grid-cols-1 lg:grid-cols-2 
                     h-screen place-items-center font-bold"
       >
         <div className="hidden lg:block">
@@ -35,9 +37,9 @@ function Login() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <img
-              src="https://ik.imagekit.io/lkxant9gz/rb_2149442162.png?updatedAt=1738340839229"
-              alt="delivery-guy"
+<img
+              src="https://ik.imagekit.io/lkxant9gz/baixados.png?updatedAt=1738585876127"
+              alt="loja de café"
             />
           </motion.div>
         </div>
@@ -48,7 +50,7 @@ function Login() {
         >
           <form className="flex justify-center items-center flex-col gap-1">
             <h2 className="text-slate-900 text-2xl">
-              <MdOutlineDeliveryDining size={250} />
+            <SiCoffeescript size={150} />
             </h2>
             <div className="flex text-center text-2xl flex-col w-full">
               <label className="p-1" htmlFor="usuario">
@@ -76,7 +78,7 @@ function Login() {
             </div>
             <button
               type="submit"
-              className="rounded-lg bg-sonic flex justify-center hover:bg-sonic-dark text-white w-1/2 py-2 mt-4"
+              className="rounded-lg bg-orange-400 flex justify-center hover:bg-orange-600 text-white w-1/2 py-2 mt-4"
             >
               <span>Entrar</span>
             </button>
@@ -89,7 +91,7 @@ function Login() {
                   e.preventDefault(); // Evita que o botão cause re-render desnecessário
                   togglePopup();
                 }}
-                className="text-sonic-dark hover:underline"
+                className="text-lucas hover:underline"
               >
                 Cadastre-se
               </button>
