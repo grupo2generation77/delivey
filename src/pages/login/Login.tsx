@@ -25,7 +25,7 @@ function Login() {
           >
             <img
               src="https://ik.imagekit.io/lkxant9gz/baixados.png?updatedAt=1738585876127"
-              alt="delivery-guy"
+              alt="loja de café"
             />
           </motion.div>
         </div>
