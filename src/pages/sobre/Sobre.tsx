@@ -1,30 +1,17 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-// Configurações do slider
-const sliderSettings = {
-  dots: true,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: false,
-  nextArrow: <div style={{ color: "#90EE90", fontSize: "24px" }}>▶</div>,
-  prevArrow: <div style={{ color: "#90EE90", fontSize: "24px" }}>◀</div>,
-};
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 const cards = [
   {
-    // Card 1: Sobre a empresa Biscoitadores
+    // Card 1: Empresa Biscoitadores
     title: "Biscoitadores",
-    description: "Empresa de desenvolvimento de softwares. Todos os membros são do estado do Rio de Janeiro.",
-    image: "https://via.placeholder.com/150/111", // altere para a URL da imagem desejada
-    link: "https://linkedin.com/company/biscoitadores", // altere para o link desejado
+    description:
+      "Empresa de desenvolvimento de softwares. Todos os membros são do estado do Rio de Janeiro.",
+    image: "https://via.placeholder.com/150/111", // Altere para a URL da imagem desejada
+    link: "https://linkedin.com/company/biscoitadores", // Altere para o link desejado
   },
   {
-    // Card 2: Sobre a demo de delivery de café Delivey 77
+    // Card 2: Demo de delivery de café Delivey 77
     title: "Delivey 77",
     description: "Demo de site de delivery de café.",
     image: "https://via.placeholder.com/150/222",
@@ -75,48 +62,59 @@ const cards = [
 ];
 
 const Sobre = () => {
+  // Efeito parallax para o container dos cards (opcional)
+  const { scrollY } = useViewportScroll();
+  const parallaxY = useTransform(scrollY, [0, 500], [50, -50]);
+
   return (
-    <div className="flex flex-col">
-      {/* Seção Parallax: imagem de fundo cobrindo toda a tela */}
+    <div className="relative min-h-screen overflow-x-hidden">
+      {/* Imagem de fundo com efeito parallax */}
       <div
-        className="h-screen bg-fixed bg-center bg-cover"
+        className="absolute inset-0 bg-fixed bg-center bg-cover"
         style={{
-          backgroundImage: "url('https://via.placeholder.com/1920x1080')", // altere para sua imagem de fundo
+          backgroundImage: "url('https://via.placeholder.com/1920x1080')", // Altere para sua imagem de fundo
         }}
-      >
-        {/* Você pode incluir um título ou deixar vazio para exibir só a imagem */}
-        <div className="h-full flex items-center justify-center bg-black bg-opacity-40">
+      />
+
+      {/* Conteúdo da página */}
+      <div className="relative z-10">
+        {/* Seção de título */}
+        <div className="h-screen flex items-center justify-center">
           <h1 className="text-5xl text-white font-bold">Sobre Nós</h1>
         </div>
-      </div>
 
-      {/* Seção do Carrossel de Cards */}
-      <div className="bg-white py-10">
-        <div className="container mx-auto px-4">
-          <Slider {...sliderSettings}>
+        {/* Container dos cards com efeito parallax global */}
+        <motion.div style={{ y: parallaxY }} className="py-10">
+          <div className="container mx-auto px-4 space-y-8">
             {cards.map((card, index) => (
-              <a
+              <motion.a
                 key={index}
                 href={card.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block focus:outline-none"
+                className="block"
+                initial={{ scale: 0.8, filter: "blur(4px)", opacity: 0.6 }}
+                whileInView={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: false, amount: 0.5 }}
               >
-                <div className="flex flex-col md:flex-row items-center bg-gray-100 bg-opacity-90 rounded-lg shadow-lg p-6 m-4 hover:shadow-xl transition duration-300">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full md:mr-6"
-                  />
-                  <div className="mt-4 md:mt-0 text-center md:text-left">
-                    <h3 className="text-xl font-bold mb-2">{card.title}</h3>
-                    <p className="text-gray-700">{card.description}</p>
+                <div className="bg-white bg-opacity-90 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                  <div className="flex flex-col md:flex-row items-center p-4">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full md:mr-6"
+                    />
+                    <div className="mt-4 md:mt-0 text-center md:text-left">
+                      <h2 className="text-xl font-bold">{card.title}</h2>
+                      <p className="text-gray-700">{card.description}</p>
+                    </div>
                   </div>
                 </div>
-              </a>
+              </motion.a>
             ))}
-          </Slider>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
