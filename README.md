@@ -35,6 +35,7 @@ Nós precisávamos atender alguns requisitos, quais foram eles:
 - Uso adequado de **margens**, **padding** e **alinhamento** para garantir uma interface limpa.
 - Utilização de **Flexbox** e **Grid** para criar layouts responsivos e flexíveis.
 - **Funcionalidade especial** Buscar por produto saudável.
+- **Sobre nós** Fizemos uma página para que saibam mais sobre os desenvolvedores do projeto, com links dos perfis de LinkedIn de cada um.
 
 
 <h2 id="started">🚀Primeiros Passos</h2>
