@@ -1,21 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Login from "./pages/login/Login";
-import CatalogoPage from "./pages/catalogo/CatalogoPage";
-import { CatalogoHome } from "./components/catalogoHome/CatalogoHome";
-import { teste } from "./services/Service";
+import Sobre from './pages/sobre/Sobre'
 import Navbar from './components/navbar/Navbar';
 
 function App() {
-  console.log(teste())
+
   return (
     <>
-    <BrowserRouter>
-    <Navbar/>
-    <Routes>
-      <Route path="/" element={<CatalogoPage />} />
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Sobre />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
