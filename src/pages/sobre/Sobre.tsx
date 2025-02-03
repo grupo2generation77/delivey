@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Sobre = () => {
   // Defina explicitamente o tipo do estado como um array de números
