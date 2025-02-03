@@ -39,5 +39,3 @@ export const teste = async():Promise<any> =>{
     const response = await api.post(`/usuarios/logar`,usuario);
     return response.data
 }
-
-  
