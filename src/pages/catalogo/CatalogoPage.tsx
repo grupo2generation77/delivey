@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { ListarProdutos } from "../../components/produto/listarProdutos/ListarProdutos";
 import { ListarCategorias } from "../../components/categoria/listarCategorias/ListarCategorias";
 import BotaoAnimado from "../../components/botoes/BotaoAnimado";
+import { BotaoCriar } from "../../components/botoes/BotaoCriar";
 
 const delays:string[] = [
     ' animate-delay-400 ',
@@ -16,18 +17,12 @@ const delays:string[] = [
 
 const Catalogo: React.FC = () => {
     const [mostrarCategorias, setMostrarCategorias] = useState<boolean>(false);
-    const catalogoRef = useRef<any>(null);
-
-    const scrollToTop = () => {
-        if(catalogoRef.current)
-        catalogoRef.current.scrollIntoView({ behavior: "smooth" })
-    };
 
     return (
         <>
-        <div className=" flex w-screen min-h-screen justify-center items-center flex-col p-0 m-0">
+        <div className=" flex w-screen min-h-screen justify-center items-center flex-col p-0 m-0 mt-22">
         {/* Catálogo */}
-            <div ref={catalogoRef} id="catalogo" className="flex justify-center items-start wire-one-regular text-orange-900 font-bold gap-2 select-none flex-wrap ">
+            <div  id="catalogo" className="flex justify-center items-start wire-one-regular text-orange-900 font-bold gap-2 select-none flex-wrap ">
                 <p className="text-[clamp(4rem,24vw,16rem)] animate-fade-up animate-duration-2000 animate-delay-100 hover:scale-110 transition-transform">
                 C
                 </p>
@@ -74,21 +69,13 @@ const Catalogo: React.FC = () => {
                 </g>
             </svg>
 
-            <div className="flex justify-center items-center flex-col p-0 animate-fade animate-duration-1000 animate-delay-500 animate-ease-in">
-                <BotaoProdutoCategoria onClick={() => {setMostrarCategorias(!mostrarCategorias);scrollToTop()}} />
+            <div className="flex justify-center items-center p-0 animate-fade animate-duration-1000 animate-delay-500 animate-ease-in">
+                <BotaoProdutoCategoria onClick={() => {setMostrarCategorias(!mostrarCategorias);}} />
             </div>
-
-            <BotaoAnimado/>
-
-
+            <BotaoCriar/>
         {/* Cards */}
-            {!mostrarCategorias &&(
-                ListarProdutos()
-            )}
-
-            {mostrarCategorias &&(
-                ListarCategorias()
-            )}
+        {!mostrarCategorias && <ListarProdutos />}
+        {mostrarCategorias && <ListarCategorias />}
         
         </div>
         </>

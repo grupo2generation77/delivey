@@ -121,9 +121,9 @@ export function ListarProdutos(){
     return(
         <>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 m-5">
-            {produtos.map((produto,index) => (
-                CardProduto(produto,index)
-            ))}
+        {produtos.map((produto, index) => (
+            <CardProduto key={produto.id} item={index} produto={produto} />
+        ))}
         </div>
         </>
 

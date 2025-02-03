@@ -9,7 +9,7 @@ export const BotaoProdutoCategoria: React.FC<BotaoProdutoCategoriaProps> = ({onC
             <input className="sr-only peer" type="checkbox" onClick={onClick}/>
             <div className="wire-one-regular text-2xl font-bold shadow-2xl flex items-center justify-between peer rounded-br-2xl rounded-tl-2xl outline-none
             duration-100 after:duration-500 w-48 h-14 bg-orange-200 peer-focus:outline-none 
-            peer-focus:ring-2 peer-focus:ring-orange-300 after:content-['Produtos'] after:absolute 
+            peer-focus:ring-2 peer-focus:ring-[#7e2a0c] after:content-['Produtos'] after:absolute 
             after:outline-none after:rounded-br-xl after:rounded-tl-xl after:h-12 after:w-24 
             after:bg-white after:top-1 after:left-1 after:flex after:justify-center after:items-center 
             after:text-orange-900 after:font-bold peer-checked:after:translate-x-22 
