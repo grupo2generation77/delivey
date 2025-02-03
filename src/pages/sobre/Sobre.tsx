@@ -57,7 +57,7 @@ const cards = [
     // Card 8: Membro 6
     title: "Ivan Barbosa",
     description: "P.O. e Desenvolvedor Fullstack Jr.",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQFjWcNyZu2Ptg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719620770969?e=1744243200&v=beta&t=UukshsY3xy9Iq4buXOQ06lpR43xymU-gAwZPLC8L9JI",
+    image: "https://ik.imagekit.io/devivanjulio/IvanMagro.jpg?updatedAt=1738622596666",
     link: "https://www.linkedin.com/in/ivanj%C3%BAlio/",
   },
 ];
