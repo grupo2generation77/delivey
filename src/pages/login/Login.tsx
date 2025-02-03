@@ -98,120 +98,119 @@ function Login() {
         </motion.div>
       </div>
 
-      {/* Popup com efeito de animação */}
       <AnimatePresence>
-        {isPopupOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }} // Estado inicial: invisível e menor
-            animate={{ opacity: 1, scale: 1 }} // Estado animado: visível e tamanho normal
-            exit={{ opacity: 0, scale: 0.8 }} // Estado ao sair: invisível e menor
-            transition={{ duration: 0.3, ease: "easeInOut" }} // Duração e suavização da animação
-            className="fixed inset-0 bg-white/20 backdrop-blur-xs flex justify-center items-center"
+  {isPopupOpen && (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }} // Estado inicial: invisível e menor
+      animate={{ opacity: 1, scale: 1 }} // Estado animado: visível e tamanho normal
+      exit={{ opacity: 0, scale: 0.8 }} // Estado ao sair: invisível e menor
+      transition={{ duration: 0.3, ease: "easeInOut" }} // Duração e suavização da animação
+      className="fixed inset-0 bg-white/20 backdrop-blur-xs flex justify-center items-center"
+    >
+      <motion.div
+        className="p-8 rounded-2xl shadow-lg"
+        style={{ backgroundColor: '#fee5ca' }} // Cor de fundo alterada
+      >
+        <h2 className="text-2xl font-bold mb-4">Cadastre-se</h2>
+        <form className="flex flex-col gap-4">
+          <div className="flex flex-col">
+            <label htmlFor="nome" className="mb-2 text-lg">
+              Nome
+            </label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Nome Completo"
+              className="border-2 text-lg border-slate-700 rounded-lg p-2 w-full"
+            />
+          </div>
+
+          {/* Campo de Foto - URL da Imagem */}
+          <div className="flex flex-col">
+            <label htmlFor="fotoUrl" className="mb-2 text-lg">
+              Foto (URL)
+            </label>
+            <input
+              type="text"
+              id="fotoUrl"
+              name="fotoUrl"
+              placeholder="Cole o link aqui"
+              className="border-2 text-lg border-slate-700 rounded-lg p-2 w-full"
+              onChange={(e) => setFoto(e.target.value)} // Atualiza o estado com o link inserido
+            />
+            {foto && (
+              <div className="mt-4">
+                <img
+                  src={foto}
+                  alt="Foto do usuário"
+                  className="w-full max-w-xs rounded-lg border-2 border-slate-700"
+                />
+              </div>
+            )}
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="email" className="mb-2 text-lg">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="exemplo@email.com"
+              className="border-2 text-lg border-slate-700 rounded-lg p-2 w-full"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="senhaCadastro" className="mb-2 text-lg">
+              Senha
+            </label>
+            <input
+              type="password"
+              id="senhaCadastro"
+              name="senhaCadastro"
+              placeholder="Senha"
+              className="border-2 text-lg border-slate-700 rounded-lg p-2 w-full"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="confirmarSenha" className="mb-2 text-lg">
+              Confirmar Senha
+            </label>
+            <input
+              type="password"
+              id="confirmarSenha"
+              name="confirmarSenha"
+              placeholder="Confirmar Senha"
+              className="border-2 text-lg border-slate-700 rounded-lg p-2 w-full"
+            />
+          </div>
+          <button
+            type="submit"
+            className="rounded-lg flex justify-center text-white w-full py-2 transition-colors duration-200"
+            style={{ backgroundColor: '#b00e2f' }} // Cor normal
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#8a0b24'} // Cor hover
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#b00e2f'} // Volta à cor normal
           >
-            <motion.div
-              className="bg-white p-8 rounded-2xl shadow-lg"
-            >
-              <h2 className="text-2xl font-bold mb-4">Cadastre-se</h2>
-              <form className="flex flex-col gap-4">
-                <div className="flex flex-col">
-                  <label htmlFor="nome" className="mb-2 text-lg">
-                    Nome
-                  </label>
-                  <input
-                    type="text"
-                    id="nome"
-                    name="nome"
-                    placeholder="Nome"
-                    className="border-2 text-lg border-slate-700 rounded-lg p-2 w-full"
-                  />
-                </div>
+            <span>Cadastrar</span>
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              togglePopup();
+            }}
+            className="text-sonic-dark hover:underline"
+            style={{ color: "black"}}
+          >
+            Voltar
+          </button>
+        </form>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
-                {/* Campo de Foto */}
-                <div className="flex flex-col">
-                  <label htmlFor="foto" className="mb-2 text-lg">
-                    Foto
-                  </label>
-                  <label
-                    htmlFor="foto"
-                    className="border-2 text-lg border-slate-700 rounded-lg p-2 cursor-pointer text-gray-500 hover:bg-gray-100 transition-colors w-full"
-                  >
-                    Adicione sua foto aqui
-                  </label>
-                  <input
-                    type="file"
-                    id="foto"
-                    name="foto"
-                    accept="image/*"
-                    onChange={handleFotoChange}
-                    className="hidden"
-                  />
-                  {foto && (
-                    <div className="mt-4">
-                      <img
-                        src={foto}
-                        alt="Foto do usuário"
-                        className="w-full max-w-xs rounded-lg border-2 border-slate-700"
-                      />
-                    </div>
-                  )}
-                </div>
-
-                <div className="flex flex-col">
-                  <label htmlFor="email" className="mb-2 text-lg">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    className="border-2 text-lg border-slate-700 rounded-lg p-2 w-full"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label htmlFor="senhaCadastro" className="mb-2 text-lg">
-                    Senha
-                  </label>
-                  <input
-                    type="password"
-                    id="senhaCadastro"
-                    name="senhaCadastro"
-                    placeholder="Senha"
-                    className="border-2 text-lg border-slate-700 rounded-lg p-2 w-full"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label htmlFor="confirmarSenha" className="mb-2 text-lg">
-                    Confirmar Senha
-                  </label>
-                  <input
-                    type="password"
-                    id="confirmarSenha"
-                    name="confirmarSenha"
-                    placeholder="Confirmar Senha"
-                    className="border-2 text-lg border-slate-700 rounded-lg p-2 w-full"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="rounded-lg bg-sonic flex justify-center hover:bg-sonic-dark text-white w-full py-2"
-                >
-                  <span>Cadastrar</span>
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    togglePopup();
-                  }}
-                  className="text-sonic-dark hover:underline"
-                >
-                  Voltar
-                </button>
-              </form>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }
