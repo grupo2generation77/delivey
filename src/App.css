@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Wire+One&display=swap');
+@import "tailwindcss";
+@import "tailwindcss-animated";
+  
+  :root{
+    background: #fee5ca;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .clip-path-quadrado{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  
+  .wire-one-regular {
+    font-family: "Wire One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+  
+  
+  @theme{
+  --color-cafe: #fee5ca;
+  --color-ice: #ffe89c;
+  --color-sonic: #9d6bc9;
+  --color-sonic-dark: #8357ae;
+  --color-orange-red: #fee5ca;
+  --color-lucas: #9f0712;
+}
+
+
