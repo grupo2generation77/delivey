@@ -6,7 +6,6 @@ function Navbar() {
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
     const toggleSubMenu = () => setIsSubMenuOpen(!isSubMenuOpen);
-
     const closeSubMenu = () => setIsSubMenuOpen(false);
 
     return (
