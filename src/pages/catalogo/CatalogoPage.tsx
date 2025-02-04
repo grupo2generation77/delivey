@@ -72,7 +72,11 @@ const Catalogo: React.FC = () => {
             <div className="flex justify-center items-center p-0 animate-fade animate-duration-1000 animate-delay-500 animate-ease-in">
                 <BotaoProdutoCategoria onClick={() => {setMostrarCategorias(!mostrarCategorias);}} />
             </div>
-            <BotaoCriar/>
+            <div className=" animate-fade-up animate-delay-400">
+                <BotaoCriar/>
+            </div>
+            
+            
         {/* Cards */}
         {!mostrarCategorias && <ListarProdutos />}
         {mostrarCategorias && <ListarCategorias />}

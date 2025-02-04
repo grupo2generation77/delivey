@@ -1,16 +1,11 @@
 import { useState } from "react";
 
 function Navbar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);  
-    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);  
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
-
-
-
-    const toggleSubMenu = () => setIsSubMenuOpen(!isSubMenuOpen);
-
-
-    const closeSubMenu = () => setIsSubMenuOpen(false);
+  const toggleSubMenu = () => setIsSubMenuOpen(!isSubMenuOpen);
+  const closeSubMenu = () => setIsSubMenuOpen(false);
 
     return (
         <>
