@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react"
 import type Produto from "../../../models/produto/Produto"
 import { CardProduto } from "../cardProduto/CardProduto"
-import { ToastAlerta } from "../../../utils/ToastAlerta"
+import { ToastAlerta } from "../../utils/ToastAlerta"
 import { buscar, deletar } from "../../../services/Service"
 import { AuthContext } from "../../../contexts/AuthContext"
 import { useNavigate } from "react-router-dom"

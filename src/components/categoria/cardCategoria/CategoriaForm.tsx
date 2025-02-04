@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
 import type Categoria from "../../../models/categoria/Categoria"
 import { buscar, atualizar, cadastrar } from "../../../services/Service"
-import { ToastAlerta } from "../../../utils/ToastAlerta"
+import { ToastAlerta } from "../../utils/ToastAlerta"
 
 interface CategoriaFormProps {
     onCadastroCategoria: () => void

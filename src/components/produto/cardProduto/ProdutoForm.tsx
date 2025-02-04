@@ -4,7 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext"
 import type Produto from "../../../models/produto/Produto"
 import type Categoria from "../../../models/categoria/Categoria"
 import { buscar, atualizar, cadastrar } from "../../../services/Service"
-import { ToastAlerta } from "../../../utils/ToastAlerta"
+import { ToastAlerta } from "../../utils/ToastAlerta"
 
 interface ProdutoFormProps {
     onCadastroProduto: () => void

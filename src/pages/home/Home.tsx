@@ -1,5 +1,5 @@
 import Footer from "../../components/footer/Footer";
-import { CatalogoHome } from "../../components/homecatalogo/HomeCatalogo";
+import { CatalogoHome } from "../../components/catalogoHome/CatalogoHome";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
                 <ParallaxLayer speed={0.5}>
                     <div
                         id="delivery-cafe"
-                        className="flex justify-center pt-15 items-start wire-one-regular text-orange-900 p-5 font-bold gap-2 select-none max-w-full flex-wrap"
+                        className="flex justify-center pt-15 items-start wire-one-regular text-orange-900 p-5 font-bold gap-2 select-none max-w-full flex-wrap rounded-b-full"
                     >
                         {[
                             "D",

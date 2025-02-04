@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
 import type Categoria from "../../../models/categoria/Categoria"
 import { buscar, deletar } from "../../../services/Service"
-import { ToastAlerta } from "../../../utils/ToastAlerta"
+import { ToastAlerta } from "../../utils/ToastAlerta"
 import { CardCategoria } from "../cardCategoria/CardCategoria"
 
 interface ListarCategoriasProps {
