@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { ProdutoForm } from "../produto/cardProduto/ProdutoForm";
 
-export function BotaoCriar() {
+export function BotaoCriar({ tipo }: { tipo: boolean }) {
   return (
     <StyledWrapper>
       <button className="animated-button m-5 bg-red-800">
@@ -22,11 +23,11 @@ const StyledWrapper = styled.div`
     background-color: inherit;
     border-radius: 0;
     font-weight: 600;
-    color:  #7e2a0c;
-    box-shadow: 0 0 0 2px  #7e2a0c;
+    color: #7e2a0c;
+    box-shadow: 0 0 0 2px #7e2a0c;
     cursor: pointer;
     overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .animated-button span:last-child {
@@ -39,7 +40,7 @@ const StyledWrapper = styled.div`
     background-color: #7e2a0c;
     border-radius: 50%;
     opacity: 0;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .animated-button span:first-child {
@@ -60,6 +61,5 @@ const StyledWrapper = styled.div`
     width: 150px;
     height: 150px;
     opacity: 1;
-  }`;
-
-
+  }
+`;

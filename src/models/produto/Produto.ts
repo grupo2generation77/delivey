@@ -5,7 +5,7 @@ export default interface Produto {
     nome: string;
     preco: number;
     calorias: number;
-    proteinas: number;
+    artesanal: boolean;
     foto: string;
     categoria: Categoria | null;
 }
@@ -14,7 +14,7 @@ export default interface ProdutoForm {
     nome: string;
     preco: number;
     calorias: number;
-    proteinas: number;
+    artesanal: boolean;
     foto: string;
     categoria: Categoria | null;
 }

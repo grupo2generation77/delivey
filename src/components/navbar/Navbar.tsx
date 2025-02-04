@@ -1,39 +1,45 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);  
-    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);  
-
-
-
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
     const toggleSubMenu = () => setIsSubMenuOpen(!isSubMenuOpen);
-
 
     const closeSubMenu = () => setIsSubMenuOpen(false);
 
     return (
         <>
-            <div className="w-full h-14 rounded-b-xl flex justify-between py-5 text-red-800 fixed top-0 left-0 bg-transparent backdrop-blur-xs z-50">
+            <div className="w-full h-14 rounded-b-xl flex justify-between py-5 text-red-800 top-0 left-0 bg-transparent backdrop-blur-xs z-50">
                 <div className="w-full flex justify-between items-center text-lg">
                     <div className="font-bold ml-15 text-4xl ">Delivey</div>
                     <div className="flex gap-6 text-xl">
                         <button className="w-24 h-10 border-1 border-red-800 bg-red-50 relative overflow-hidden group shadow-[2px_2px_0px_rgba(155,44,44,1)]">
                             <span className="absolute inset-0 bg-red-800 transform translate-y-full group-hover:translate-y-0 transition-all duration-300"></span>
-                            <span className="relative z-10 text-red-800 group-hover:text-white transition-colors duration-300">Não sei</span>
+                            <Link
+                                to="/catalogo"
+                                className="relative z-10 text-red-800 group-hover:text-white transition-colors duration-300"
+                            >
+                                Não sei
+                            </Link>
                         </button>
                         <button className="w-24 h-10 border-1 border-red-800 bg-red-50 relative overflow-hidden group shadow-[2px_2px_0px_rgba(155,44,44,1)]">
                             <span className="absolute inset-0 bg-red-800 transform translate-y-full group-hover:translate-y-0 transition-all duration-300"></span>
-                            <span className="relative z-10 text-red-800 group-hover:text-white transition-colors duration-300">Sei lá</span>
+                            <span className="relative z-10 text-red-800 group-hover:text-white transition-colors duration-300">
+                                Sei lá
+                            </span>
                         </button>
                         {!isMenuOpen && (
                             <div className="flex gap-6 text-xl mr-10">
-                                <button 
-                                    onClick={toggleSubMenu} 
+                                <button
+                                    onClick={toggleSubMenu}
                                     className="w-24 h-10 border-1 border-red-800 bg-red-50 relative overflow-hidden group shadow-[2px_2px_0px_rgba(155,44,44,1)]"
                                 >
                                     <span className="absolute inset-0 bg-red-800 transform translate-y-full group-hover:translate-y-0 transition-all duration-300"></span>
-                                    <span className="relative z-10 text-red-800 group-hover:text-white transition-colors duration-300">Menu</span>
+                                    <span className="relative z-10 text-red-800 group-hover:text-white transition-colors duration-300">
+                                        Menu
+                                    </span>
                                 </button>
                             </div>
                         )}
@@ -52,10 +58,9 @@ function Navbar() {
                                 </div>
                             </div>
                         )}
-                    </div> 
+                    </div>
                 </div>
             </div>
-            
         </>
     );
 }

@@ -7,6 +7,7 @@ import Navbar from "./components/navbar/Navbar";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Home } from "./pages/home/Home";
 import { ToastContainer } from "react-toastify";
+import { ProdutoForm } from "./components/produto/cardProduto/ProdutoForm";
 
 function App() {
   return (

@@ -15,11 +15,6 @@ function Login() {
     {} as UsuarioLogin
   );
 
-  useEffect(() => {
-    if (usuario.token !== "") {
-      navigate("/");
-    }
-  }, [usuario]);
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuarioLogin({
@@ -104,6 +99,7 @@ function Login() {
             <button
               type="submit"
               className="rounded bg-orange-400 flex justify-center hover:bg-orange-600 text-white w-1/2 py-2"
+              onClick={() => { navigate("/") }}
             >
               <span>Entrar</span>
             </button>
