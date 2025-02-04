@@ -4,6 +4,7 @@ import {
   LinkedinLogo,
   GithubLogo,
 } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   let data = new Date().getFullYear();
@@ -36,13 +37,13 @@ function Footer() {
         </div>
         <div className="w-full md:w-1/4 flex flex-col items-center">
           <p className="text-lg font-semibold mb-2">Conheça nossa equipe</p>
-          <a href="#">
+          <Link to={"/sobre"}>
             <img
               src="https://i.imgur.com/eLlt9Sp.png"
               alt="Biscoito"
               className="w-20 h-20 animate-spin-slow"
             />
-          </a>
+          </Link>
         </div>
 
         <div className="w-full md:w-1/4">

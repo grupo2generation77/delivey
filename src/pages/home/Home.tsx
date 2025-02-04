@@ -11,30 +11,18 @@ function Home() {
             id="delivery-cafe"
             className="flex justify-center pt-15 items-start wire-one-regular text-orange-900 p-5 font-bold gap-2 select-none max-w-full flex-wrap"
           >
-            {[
-              "D",
-              "E",
-              "L",
-              "I",
-              "V",
-              "E",
-              "R",
-              "Y",
-              " ",
-              "C",
-              "A",
-              "F",
-              "É",
-            ].map((letter, index) => (
-              <p
-                key={index}
-                className={`text-[clamp(2rem,10vw,8rem)] animate-fade-up animate-duration-1000 animate-delay-${
-                  100 + index * 50
-                } hover:scale-110 transition-transform`}
-              >
-                {letter}
-              </p>
-            ))}
+            {["D", "E", "L", "I", "V", "E", "Y", " ", "C", "A", "F", "É"].map(
+              (letter, index) => (
+                <p
+                  key={index}
+                  className={`text-[clamp(2rem,10vw,8rem)] animate-fade-up animate-duration-1000 animate-delay-${
+                    100 + index * 50
+                  } hover:scale-110 transition-transform`}
+                >
+                  {letter}
+                </p>
+              )
+            )}
           </div>
 
           <div className="flex bg-cafe flex-col items-center justify-center px-4">
@@ -56,7 +44,7 @@ function Home() {
 
             <div className="px-4 text-center">
               <p className="text-xl sm:text-2xl md:text-3xl font-bold text-orange-900">
-                O Delivery Café se encontra no Rio há mais de 10 anos trazendo o
+                O Delivey Café se encontra no Rio há mais de 10 anos trazendo o
                 melhor café da região com o melhor atendimento do Rio.
               </p>
             </div>
