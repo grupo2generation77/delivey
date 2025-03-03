@@ -128,7 +128,7 @@ Agradecimento especial a todas as pessoas que contribuíram para este projeto.
     </td>
     <td align="center">
       <a href="#">
-       <img src="https://media.licdn.com/dms/image/v2/D4D03AQG7M9HV-KB12A/profile-displayphoto-shrink_800_800/B4DZTWy6VlHIAc-/0/1738770459513?e=1746662400&v=beta&t=jfK2gZ8AV93ALvAZXcRY-R3PAz3pfI6spr3NGD7vLwE"/><br>
+       <img src="https://media.licdn.com/dms/image/v2/D4D03AQG7M9HV-KB12A/profile-displayphoto-shrink_200_200/B4DZTWy6VlHIAY-/0/1738770459513?e=1746662400&v=beta&t=4to-JGQHIF_X30x8yis1w4H8mQD1rCdHRev52twZAks"/><br>
         <sub>
           <b>Ivan Barbosa</b>
         </sub>
