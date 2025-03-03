@@ -128,7 +128,7 @@ Agradecimento especial a todas as pessoas que contribuíram para este projeto.
     </td>
     <td align="center">
       <a href="#">
-       <img src="https://media.licdn.com/dms/image/v2/D4D03AQFjWcNyZu2Ptg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719620770969?e=1743638400&v=beta&t=TkPfs7_n5gGAVjFBBEHTix6uUAa1aVLMqLk-5_1s7z0" width="100px;" alt="Perfil do LinkedIn"/><br>
+       <img src="https://media.licdn.com/dms/image/v2/D4D03AQG7M9HV-KB12A/profile-displayphoto-shrink_800_800/B4DZTWy6VlHIAc-/0/1738770459513?e=1746662400&v=beta&t=jfK2gZ8AV93ALvAZXcRY-R3PAz3pfI6spr3NGD7vLwE"/><br>
         <sub>
           <b>Ivan Barbosa</b>
         </sub>
