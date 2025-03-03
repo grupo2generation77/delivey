@@ -120,7 +120,7 @@ Agradecimento especial a todas as pessoas que contribuíram para este projeto.
   <tr>
     <td align="center">
       <a href="#">
-<img src="https://media.licdn.com/dms/image/v2/D4D03AQHhaZoYRKxtsg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729899450213?e=1743638400&v=beta&t=IQKOLXKYW-dgsyhahqEpHNtViFOnW2zfsPOA8NClOq4" width="100px;" alt="Perfil do LinkedIn"/><br>
+<img src="https://media.licdn.com/dms/image/v2/D4D03AQGpihcp3fKYsA/profile-displayphoto-shrink_100_100/B4DZTWcX8qH0AU-/0/1738764550787?e=1746662400&v=beta&t=uistKCE3d7YodBOuo6l_k6JzXHgmP_oS2NU0jkXyNps" width="100px;" alt="Perfil do LinkedIn"/><br>
         <sub>
           <b>Jaqueline Costa</b>
         </sub>
@@ -128,7 +128,7 @@ Agradecimento especial a todas as pessoas que contribuíram para este projeto.
     </td>
     <td align="center">
       <a href="#">
-       <img src="https://media.licdn.com/dms/image/v2/D4D03AQG7M9HV-KB12A/profile-displayphoto-shrink_200_200/B4DZTWy6VlHIAY-/0/1738770459513?e=1746662400&v=beta&t=4to-JGQHIF_X30x8yis1w4H8mQD1rCdHRev52twZAks" width="100px;" alt="Perfil do LinkedIn/><br>
+       <img src="https://media.licdn.com/dms/image/v2/D4D03AQG7M9HV-KB12A/profile-displayphoto-shrink_200_200/B4DZTWy6VlHIAY-/0/1738770459513?e=1746662400&v=beta&t=4to-JGQHIF_X30x8yis1w4H8mQD1rCdHRev52twZAks" width="100px;" alt="Perfil do LinkedIn"/><br>
         <sub>
           <b>Ivan Barbosa</b>
         </sub>
