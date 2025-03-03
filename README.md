@@ -128,7 +128,7 @@ Agradecimento especial a todas as pessoas que contribuíram para este projeto.
     </td>
     <td align="center">
       <a href="#">
-       <img src="https://media.licdn.com/dms/image/v2/D4D03AQG7M9HV-KB12A/profile-displayphoto-shrink_200_200/B4DZTWy6VlHIAY-/0/1738770459513?e=1746662400&v=beta&t=4to-JGQHIF_X30x8yis1w4H8mQD1rCdHRev52twZAks"/><br>
+       <img src="https://media.licdn.com/dms/image/v2/D4D03AQG7M9HV-KB12A/profile-displayphoto-shrink_200_200/B4DZTWy6VlHIAY-/0/1738770459513?e=1746662400&v=beta&t=4to-JGQHIF_X30x8yis1w4H8mQD1rCdHRev52twZAks" width="100px;" alt="Perfil do LinkedIn/><br>
         <sub>
           <b>Ivan Barbosa</b>
         </sub>
@@ -160,7 +160,7 @@ Agradecimento especial a todas as pessoas que contribuíram para este projeto.
     </td>
      <td align="center">
       <a href="#">
-<img src="https://media.licdn.com/dms/image/v2/D4D03AQFLw_w4gY3BXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724398107767?e=1743638400&v=beta&t=QIed63iRmZxdOK0Dq-KZiN7ESOIK9QQg8uQ9FN14Qnc" width="100px;" alt="Perfil do LinkedIn"/><br>
+<img src="https://avatars.githubusercontent.com/u/185989251?s=130&v=4" width="100px;" alt="Perfil do LinkedIn"/><br>
         <sub>
           <b>Vitória Manuela</b>
         </sub>
