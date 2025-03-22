@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"; // Importe AnimatePresence
-import { ChangeEvent, useContext, useEffect, useState } from "react";
+import { ChangeEvent, useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import UsuarioLogin from "../../models/Usuario/UsuarioLogin";
 import { useNavigate } from "react-router-dom";
@@ -8,13 +8,12 @@ import { Cadastro } from "./Cadastrar";
 
 function Login() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const { usuario, handleLogin } = useContext(AuthContext);
+  const { handleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
     {} as UsuarioLogin
   );
-
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuarioLogin({
@@ -99,7 +98,9 @@ function Login() {
             <button
               type="submit"
               className="rounded bg-orange-400 flex justify-center hover:bg-orange-600 text-white w-1/2 py-2"
-              onClick={() => { navigate("/") }}
+              onClick={() => {
+                navigate("/");
+              }}
             >
               <span>Entrar</span>
             </button>

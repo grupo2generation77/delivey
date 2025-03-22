@@ -1,8 +1,6 @@
-import React from "react";
 import styled from "styled-components";
-import { ProdutoForm } from "../produto/cardProduto/ProdutoForm";
 
-export function BotaoCriar({ tipo }: { tipo: boolean }) {
+export function BotaoCriar() {
   return (
     <StyledWrapper>
       <button className="animated-button m-5 bg-red-800">

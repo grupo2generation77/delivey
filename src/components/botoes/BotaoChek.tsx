@@ -1,45 +1,49 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface BotaoChekProps {
-    checked: boolean;
-    onChange: (checked: boolean) => void;
-    label?: string;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+  label?: string;
 }
 
-export function BotaoChek({ checked, onChange, label = 'Artesanais' }: BotaoChekProps) {
-    return (
-        <StyledWrapper>
-            <div className="checkbox-wrapper-4  outline-orange-800">
-                <input
-                    className="inp-cbx"
-                    id="artesanal"
-                    type="checkbox"
-                    checked={checked}
-                    onChange={(e) => onChange(e.target.checked)}
-                />
-                <label className="cbx" htmlFor="artesanal">
-                    <span>
-                        <svg width="12px" height="10px">
-                            <use xlinkHref="#check-4" />
-                        </svg>
-                    </span>
-                    <span>{label}</span>
-                </label>
-                <svg className="inline-svg">
-                    <symbol id="check-4" viewBox="0 0 12 10">
-                        <polyline points="1.5 6 4.5 9 10.5 1" />
-                    </symbol>
-                </svg>
-            </div>
-        </StyledWrapper>
-    );
+export function BotaoChek({
+  checked,
+  onChange,
+  label = "Artesanais",
+}: BotaoChekProps) {
+  return (
+    <StyledWrapper>
+      <div className="checkbox-wrapper-4  outline-orange-800">
+        <input
+          className="inp-cbx"
+          id="artesanal"
+          type="checkbox"
+          checked={checked}
+          onChange={(e) => onChange(e.target.checked)}
+        />
+        <label className="cbx" htmlFor="artesanal">
+          <span>
+            <svg width="12px" height="10px">
+              <use xlinkHref="#check-4" />
+            </svg>
+          </span>
+          <span>{label}</span>
+        </label>
+        <svg className="inline-svg">
+          <symbol id="check-4" viewBox="0 0 12 10">
+            <polyline points="1.5 6 4.5 9 10.5 1" />
+          </symbol>
+        </svg>
+      </div>
+    </StyledWrapper>
+  );
 }
 
 const StyledWrapper = styled.div`
   .checkbox-wrapper-4 * {
     box-sizing: border-box;
     color: oklch(0.47 0.157 37.304);
-    background: 
+    background: ;
   }
 
   .checkbox-wrapper-4 .cbx {
@@ -58,7 +62,7 @@ const StyledWrapper = styled.div`
   }
 
   .checkbox-wrapper-4 .cbx:hover {
-    background: rgba(0,119,255,0.06);
+    background: rgba(0, 119, 255, 0.06);
   }
 
   .checkbox-wrapper-4 .cbx span {
@@ -75,7 +79,7 @@ const StyledWrapper = styled.div`
     transform: scale(1);
     border: 1px solid #cccfdb;
     transition: all 0.2s ease;
-    box-shadow: 0 1px 1px rgba(0,16,75,0.05);
+    box-shadow: 0 1px 1px rgba(0, 16, 75, 0.05);
   }
 
   .checkbox-wrapper-4 .cbx span:first-child svg {
@@ -155,6 +159,5 @@ const StyledWrapper = styled.div`
     50% {
       transform: scale(0.9);
     }
-  }`;
-
-
+  }
+`;
