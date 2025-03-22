@@ -6,6 +6,8 @@ import CatalogoPage from "./pages/catalogo/CatalogoPage";
 import Navbar from "./components/navbar/Navbar";
 import { AuthProvider } from "./contexts/AuthContext";
 import { ToastContainer } from "react-toastify";
+import Sobre from "./pages/sobre/Sobre";
+import Footer from "./components/footer/Footer";
 
 
 function App() {
@@ -13,15 +15,18 @@ function App() {
     <>
       <AuthProvider>
         <ToastContainer />
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/catalogo" element={<CatalogoPage />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </BrowserRouter>
+          <BrowserRouter>
+            <Navbar />
+            <div className="min-h-[80vh]">
+              <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/Home" element={<Home />} />
+                <Route path="/catalogo" element={<CatalogoPage />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/Sobre" element={<Sobre />} />
+              </Routes>
+            </div>
+          </BrowserRouter>
       </AuthProvider>
     </>
   );

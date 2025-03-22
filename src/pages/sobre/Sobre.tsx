@@ -1,95 +1,84 @@
+import React from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import {
+  FacebookLogo,
+  InstagramLogo,
+  LinkedinLogo,
+  GithubLogo,
+} from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
 const cards = [
   {
-    // Card 1: Empresa Biscoitadores
     title: "Biscoitadores",
     description:
       "Empresa de desenvolvimento de softwares fundada no Rio de Janeiro em dezembro de 2024. O nome foi baseado em uma brincadeira com os colegas de São Paulo, pois todos os membros são do estado do Rio de Janeiro e não falam Bolacha.",
-    image:
-      "https://ik.imagekit.io/lkxant9gz/rb_82808.png?updatedAt=1738613905001", // Altere para a URL desejada
-    link: "https://github.com/grupo2generation7", // Altere para o link desejado
+    image: "https://ik.imagekit.io/lkxant9gz/rb_82808.png?updatedAt=1738613905001",
+    link: "https://github.com/grupo2generation7",
   },
   {
-    // Card 2: Demo de delivery de café Delivey 77
     title: "Delivey 77",
-    description:
-      "Um projeto demonstrativo, com a temática de site de delivery de produtos relacionados a café.",
-    image:
-      "https://ik.imagekit.io/devivanjulio/_Pngtree_flying%20cup%20of%20coffee%20with_5057949.png?updatedAt=1738624964597",
+    description: "Um projeto demonstrativo, com a temática de site de delivery de produtos relacionados a café.",
+    image: "https://ik.imagekit.io/devivanjulio/_Pngtree_flying%20cup%20of%20coffee%20with_5057949.png?updatedAt=1738624964597",
     link: "https://github.com/grupo2generation77/delivey",
   },
   {
-    // Card 3: Membro 1
     title: "Matheus Queiroz",
-    description: "Sênior e Tech Lead.",
-    image:
-      "https://media.licdn.com/dms/image/v2/D4D03AQGNuaxckRDF7Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730742826051?e=1744243200&v=beta&t=VSB3tNn7pDR8PmpHa-tj2vBCmx7Yba4DvPQHWfYJJIE",
+    description: "Desenvolvedor Sênior e Tech Lead na Biscoitadores e Desenvolvedor na CI&T.",
+    image: "https://ik.imagekit.io/devivanjulio/MatheusQ.jpg?updatedAt=1742657678026",
     link: "https://www.linkedin.com/in/matheus-queiroz/",
   },
   {
-    // Card 4: Membro 2
     title: "Lucas Oliveira",
-    description: "UI/UX Designer e Especialista Frontend.",
-    image:
-      "https://media.licdn.com/dms/image/v2/D4D03AQEkBH9bPMiTKw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729541301387?e=1744243200&v=beta&t=uTHHkWjSCn_2yB7aAo_PtlcslPsgGFNEiALP3kg9dA0",
+    description: "UI/UX Designer e Especialista Frontend na Biscoitadores.",
+    image: "https://ik.imagekit.io/devivanjulio/LucasO.jpg?updatedAt=1742657625194",
     link: "https://www.linkedin.com/in/lucas-vinicius-mendes/",
   },
   {
-    // Card 5: Membro 3
     title: "Vitória Manuela",
-    description: "Desenvolvedora Fullstack Jr.",
-    image:
-      "https://media.licdn.com/dms/image/v2/D4D03AQFLw_w4gY3BXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724398107767?e=1744243200&v=beta&t=KGwrQSGIjRd5pc3A-HFlIIVVmFObUNW7f56V1iOX-yk",
+    description: "Desenvolvedora Fullstack na Biscoitadores.",
+    image: "https://ik.imagekit.io/devivanjulio/Vit%C3%B3riaM.jpg?updatedAt=1742658152186",
     link: "https://www.linkedin.com/in/vitoria-manuela/",
   },
   {
-    // Card 6: Membro 4
     title: "Nina Raquel",
-    description: "Desenvolvedora Fullstack Jr.",
-    image:
-      "https://media.licdn.com/dms/image/v2/D4D03AQETZvl8qd4Dyg/profile-displayphoto-shrink_800_800/B4DZQfUeEyHcAc-/0/1735692248536?e=1744243200&v=beta&t=SNMJjKQisl7csO-zqMIQfeECo6kt9qltZJlpOnwnC8U",
+    description: "Desenvolvedora Fullstack na Biscoitadores.",
+    image: "https://ik.imagekit.io/devivanjulio/Nina.jpg?updatedAt=1742657836221",
     link: "https://www.linkedin.com/in/nina-raquel/",
   },
   {
-    // Card 7: Membro 5
     title: "Jaqueline Costa",
-    description: "Desenvolvedora Fullstack Jr.",
-    image:
-      "https://media.licdn.com/dms/image/v2/D4D03AQHhaZoYRKxtsg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729899450213?e=1744243200&v=beta&t=SH12qbELitc-EgcylkbB0UVx_apBEGjdQ3dEwPbDmzY",
+    description: "Desenvolvedora Fullstack na Biscoitadores.",
+    image: "https://ik.imagekit.io/devivanjulio/Jaque.jpg?updatedAt=1742657548708",
     link: "https://www.linkedin.com/in/jaqueline-valle/",
   },
   {
-    // Card 8: Membro 6
     title: "Ivan Barbosa",
-    description: "P.O. e Desenvolvedor Fullstack Jr.",
-    image:
-      "https://ik.imagekit.io/devivanjulio/IvanMagro.jpg?updatedAt=1738622596666",
+    description: "PO, SCRUM Master e Desenvolvedor Fullstack na Biscoitadores.",
+    image: "https://ik.imagekit.io/devivanjulio/EuUltimoDiaDeGeneration.png?updatedAt=1738849193680",
     link: "https://www.linkedin.com/in/ivanj%C3%BAlio/",
   },
 ];
 
 const Sobre = () => {
-  // Efeito parallax para o container dos cards (opcional)
   const { scrollY } = useViewportScroll();
   const parallaxY = useTransform(scrollY, [0, 500], [50, -50]);
 
-  // Hook para detectar se a seção do cookie está em foco (centralizada)
   const [cookieRef, inViewCookie] = useInView({
     threshold: 0.8,
   });
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="relative min-h-screen">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 bg-fixed bg-center bg-cover"
         style={{
-          backgroundImage:
-            "url('https://tokemcasa.tokstok.com.br/wp-content/uploads/2024/07/cafe-da-manha-na-cama.png')", // Altere para sua imagem de fundo
+          backgroundImage: "url('https://tokemcasa.tokstok.com.br/wp-content/uploads/2024/07/cafe-da-manha-na-cama.png')",
           filter: inViewCookie ? "blur(8px)" : "blur(0px)",
           transition: "filter 0.5s",
+          zIndex: -1, // Garante que a imagem de fundo fique atrás de todo o conteúdo
         }}
       />
 
@@ -142,18 +131,124 @@ const Sobre = () => {
       {/* Seção do Cookie */}
       <motion.div
         ref={cookieRef}
-        className="min-h-screen flex items-center justify-center bg-white/20 backdrop-blur-xs"
+        className="min-h-screen flex items-center justify-center bg-white/20 backdrop-blur-xs mb-10"
       >
         <motion.img
-          src="https://ik.imagekit.io/lkxant9gz/rb_82808.png?updatedAt=1738613905001" // Substitua pela imagem de um cookie americano
+          src="https://ik.imagekit.io/lkxant9gz/rb_82808.png?updatedAt=1738613905001"
           alt="Cookie"
-          className="w-48 h-48 object-contain origin-center animate-spin-slow" // Adicione a classe animate-spin-slow
+          className="w-48 h-48 object-contain origin-center animate-spin-slow"
           style={{
             filter: inViewCookie ? "blur(0px)" : "blur(4px)",
             transition: "filter 0.5s",
           }}
         />
       </motion.div>
+
+      {/* Footer */}
+      <footer className="bg-[#fee5ca] py-8 relative z-20"> {/* Adicione z-20 para garantir que o Footer fique acima da imagem de fundo */}
+        <div className="container mx-auto px-4 flex flex-wrap justify-center items-center gap-x-16 text-center">
+          <div className="w-full md:w-1/4 flex justify-center">
+            <img src="https://i.imgur.com/jQ4FgFU.png" alt="Logo da Delivery" />
+          </div>
+
+          <div className="w-full md:w-1/4 text-black">
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-sm hover:text-gray-600">
+                  Cardápio
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm hover:text-gray-600">
+                  Política de Privacidade
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm hover:text-gray-600">
+                  Termos de Serviço
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/4 flex flex-col items-center">
+            <p className="text-lg font-semibold mb-2">Conheça nossa equipe</p>
+            <Link to={"/sobre"}>
+              <img
+                src="https://i.imgur.com/eLlt9Sp.png"
+                alt="Biscoito"
+                className="w-20 h-20 animate-spin-slow"
+              />
+            </Link>
+          </div>
+
+          <div className="w-full md:w-1/4">
+            <h4 className="text-lg font-semibold mb-4">Contato</h4>
+            <p className="text-sm">
+              <span className="mr-1">Email:</span>
+              <a
+                href="mailto:contato@delivery.com"
+                className="hover:underline font-semibold"
+              >
+                contato@delivey.com
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="text-left ml-8 mt-8 pt-6 border-t border-gray-700">
+          <p className="text-xs text-black">
+            © {new Date().getFullYear()} Delivey. Todos os direitos reservados. <br />
+            Av. Tal, n°123 - Rio de Janeiro, RJ
+          </p>
+        </div>
+
+        <div className="flex justify-center gap-3 mt-4">
+          <a
+            href="https://www.linkedin.com/school/generationbrasil"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedinLogo
+              size={32}
+              weight="bold"
+              className="text-black hover:text-gray-700"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/generationbrasil"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <InstagramLogo
+              size={32}
+              weight="bold"
+              className="text-black hover:text-gray-700"
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/generationbrasil"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FacebookLogo
+              size={32}
+              weight="bold"
+              className="text-black hover:text-gray-700"
+            />
+          </a>
+          <a
+            href="https://github.com/grupo2generation77/delivey"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubLogo
+              size={32}
+              weight="bold"
+              className="text-black hover:text-gray-700"
+            />
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };
