@@ -1,12 +1,4 @@
-import React from "react";
-import Produto from "../../models/produto/Produto";
-import Categoria from "../../models/categoria/Categoria";
-
-export function BotaoDeletar(
-  i: number,
-  produto?: Produto,
-  categoria?: Categoria
-) {
+export function BotaoDeletar(i: number) {
   return (
     <button
       className={

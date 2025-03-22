@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export function BotaoEditar() {
   return (
@@ -75,4 +74,3 @@ const StyledWrapper = styled.div`
     transform: translateY(0px);
     transition-duration: 0.3s;
   }`;
-

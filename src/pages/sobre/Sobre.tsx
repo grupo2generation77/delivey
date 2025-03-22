@@ -1,4 +1,3 @@
-import React from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -8,56 +7,65 @@ const cards = [
     title: "Biscoitadores",
     description:
       "Empresa de desenvolvimento de softwares fundada no Rio de Janeiro em dezembro de 2024. O nome foi baseado em uma brincadeira com os colegas de São Paulo, pois todos os membros são do estado do Rio de Janeiro e não falam Bolacha.",
-    image: "https://ik.imagekit.io/lkxant9gz/rb_82808.png?updatedAt=1738613905001", // Altere para a URL desejada
+    image:
+      "https://ik.imagekit.io/lkxant9gz/rb_82808.png?updatedAt=1738613905001", // Altere para a URL desejada
     link: "https://github.com/grupo2generation7", // Altere para o link desejado
   },
   {
     // Card 2: Demo de delivery de café Delivey 77
     title: "Delivey 77",
-    description: "Um projeto demonstrativo, com a temática de site de delivery de produtos relacionados a café.",
-    image: "https://ik.imagekit.io/devivanjulio/_Pngtree_flying%20cup%20of%20coffee%20with_5057949.png?updatedAt=1738624964597",
+    description:
+      "Um projeto demonstrativo, com a temática de site de delivery de produtos relacionados a café.",
+    image:
+      "https://ik.imagekit.io/devivanjulio/_Pngtree_flying%20cup%20of%20coffee%20with_5057949.png?updatedAt=1738624964597",
     link: "https://github.com/grupo2generation77/delivey",
   },
   {
     // Card 3: Membro 1
     title: "Matheus Queiroz",
     description: "Sênior e Tech Lead.",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQGNuaxckRDF7Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730742826051?e=1744243200&v=beta&t=VSB3tNn7pDR8PmpHa-tj2vBCmx7Yba4DvPQHWfYJJIE",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D03AQGNuaxckRDF7Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730742826051?e=1744243200&v=beta&t=VSB3tNn7pDR8PmpHa-tj2vBCmx7Yba4DvPQHWfYJJIE",
     link: "https://www.linkedin.com/in/matheus-queiroz/",
   },
   {
     // Card 4: Membro 2
     title: "Lucas Oliveira",
     description: "UI/UX Designer e Especialista Frontend.",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQEkBH9bPMiTKw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729541301387?e=1744243200&v=beta&t=uTHHkWjSCn_2yB7aAo_PtlcslPsgGFNEiALP3kg9dA0",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D03AQEkBH9bPMiTKw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729541301387?e=1744243200&v=beta&t=uTHHkWjSCn_2yB7aAo_PtlcslPsgGFNEiALP3kg9dA0",
     link: "https://www.linkedin.com/in/lucas-vinicius-mendes/",
   },
   {
     // Card 5: Membro 3
     title: "Vitória Manuela",
     description: "Desenvolvedora Fullstack Jr.",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQFLw_w4gY3BXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724398107767?e=1744243200&v=beta&t=KGwrQSGIjRd5pc3A-HFlIIVVmFObUNW7f56V1iOX-yk",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D03AQFLw_w4gY3BXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724398107767?e=1744243200&v=beta&t=KGwrQSGIjRd5pc3A-HFlIIVVmFObUNW7f56V1iOX-yk",
     link: "https://www.linkedin.com/in/vitoria-manuela/",
   },
   {
     // Card 6: Membro 4
     title: "Nina Raquel",
     description: "Desenvolvedora Fullstack Jr.",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQETZvl8qd4Dyg/profile-displayphoto-shrink_800_800/B4DZQfUeEyHcAc-/0/1735692248536?e=1744243200&v=beta&t=SNMJjKQisl7csO-zqMIQfeECo6kt9qltZJlpOnwnC8U",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D03AQETZvl8qd4Dyg/profile-displayphoto-shrink_800_800/B4DZQfUeEyHcAc-/0/1735692248536?e=1744243200&v=beta&t=SNMJjKQisl7csO-zqMIQfeECo6kt9qltZJlpOnwnC8U",
     link: "https://www.linkedin.com/in/nina-raquel/",
   },
   {
     // Card 7: Membro 5
     title: "Jaqueline Costa",
     description: "Desenvolvedora Fullstack Jr.",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQHhaZoYRKxtsg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729899450213?e=1744243200&v=beta&t=SH12qbELitc-EgcylkbB0UVx_apBEGjdQ3dEwPbDmzY",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D03AQHhaZoYRKxtsg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729899450213?e=1744243200&v=beta&t=SH12qbELitc-EgcylkbB0UVx_apBEGjdQ3dEwPbDmzY",
     link: "https://www.linkedin.com/in/jaqueline-valle/",
   },
   {
     // Card 8: Membro 6
     title: "Ivan Barbosa",
     description: "P.O. e Desenvolvedor Fullstack Jr.",
-    image: "https://ik.imagekit.io/devivanjulio/IvanMagro.jpg?updatedAt=1738622596666",
+    image:
+      "https://ik.imagekit.io/devivanjulio/IvanMagro.jpg?updatedAt=1738622596666",
     link: "https://www.linkedin.com/in/ivanj%C3%BAlio/",
   },
 ];
@@ -78,7 +86,8 @@ const Sobre = () => {
       <div
         className="absolute inset-0 bg-fixed bg-center bg-cover"
         style={{
-          backgroundImage: "url('https://tokemcasa.tokstok.com.br/wp-content/uploads/2024/07/cafe-da-manha-na-cama.png')", // Altere para sua imagem de fundo
+          backgroundImage:
+            "url('https://tokemcasa.tokstok.com.br/wp-content/uploads/2024/07/cafe-da-manha-na-cama.png')", // Altere para sua imagem de fundo
           filter: inViewCookie ? "blur(8px)" : "blur(0px)",
           transition: "filter 0.5s",
         }}
