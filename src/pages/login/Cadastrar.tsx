@@ -60,8 +60,11 @@ export function Cadastro({ setIsPopupOpen }: any) {
 
   return (
     <>
-      <div className="fixed inset-0 bg-black/20 bg-opacity-50 flex justify-center items-center">
-        <div className="bg-white p-6 rounded-lg shadow-lg">
+      <div className="fixed inset-0 bg-white/20 backdrop-blur-xs bg-opacity-50 flex justify-center items-center">
+        <div
+          className="bg-black p-6 rounded-lg shadow-lg"
+          style={{ backgroundColor: "#fee5ca" }}
+        >
           <h2 className="text-2xl font-bold mb-4">Cadastre-se</h2>
           <form className="flex flex-col gap-4" onSubmit={cadastrarNovoUsuario}>
             <div className="flex flex-col">
@@ -72,7 +75,7 @@ export function Cadastro({ setIsPopupOpen }: any) {
                 type="text"
                 id="nome"
                 name="nome"
-                placeholder="Nome"
+                placeholder="Nome Completo"
                 className="border-2 text-xl border-slate-700 rounded p-2"
                 value={usuario.nome}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -81,12 +84,12 @@ export function Cadastro({ setIsPopupOpen }: any) {
               />
             </div>
             <div className="flex flex-col w-full">
-              <label htmlFor="foto">Foto</label>
+              <label htmlFor="foto">Foto (URL)</label>
               <input
                 type="text"
                 id="foto"
                 name="foto"
-                placeholder="Foto"
+                placeholder="Cole o link da foto"
                 className="border-2 border-slate-700 rounded p-2"
                 value={usuario.foto}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -102,7 +105,7 @@ export function Cadastro({ setIsPopupOpen }: any) {
                 type="email"
                 id="email"
                 name="usuario"
-                placeholder="Email"
+                placeholder="exemplo@email.com"
                 className="border-2 text-xl border-slate-700 rounded p-2"
                 value={usuario.usuario}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -144,8 +147,14 @@ export function Cadastro({ setIsPopupOpen }: any) {
             </div>
             <button
               type="submit"
-              className="rounded bg-sonic flex justify-center hover:bg-sonic-dark text-white w-full py-2"
-              onClick={retornar}
+              className="rounded-lg flex justify-center text-white w-full py-2 transition-colors duration-200"
+              style={{ backgroundColor: "#b00e2f" }} // Cor normal
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = "#8a0b24")
+              } // Cor hover
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "#b00e2f")
+              } // Volta à cor normal
             >
               <span>Cadastrar</span>
             </button>
@@ -154,9 +163,9 @@ export function Cadastro({ setIsPopupOpen }: any) {
             onClick={() => {
               setIsPopupOpen(false);
             }}
-            className="mt-4 px-4 py-2 bg-shadow-ice text-black rounded-lg hover:bg-dark-ice transition"
+            className="rounded-lg flex justify-center text-white w-full py-2 bg-gray-500 mt-4 hover:bg-gray-700 transition-colors duration-200"
           >
-            Fechar
+            Voltar
           </button>
         </div>
       </div>
