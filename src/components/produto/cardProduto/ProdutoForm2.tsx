@@ -238,3 +238,10 @@ export function ProdutoForm({
     </div>
   );
 }
+
+/* 
+Esta versão estava com problemas, todo componente com um 2 no final era um backup.
+Assim eu poderia trabalhar no código e reverter problemas sem perder o material
+original.
+
+*/
