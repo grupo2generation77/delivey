@@ -7,7 +7,6 @@ import Navbar from "./components/navbar/Navbar";
 import { AuthProvider } from "./contexts/AuthContext";
 import { ToastContainer } from "react-toastify";
 import Sobre from "./pages/sobre/Sobre";
-import Footer from "./components/footer/Footer";
 
 
 function App() {
